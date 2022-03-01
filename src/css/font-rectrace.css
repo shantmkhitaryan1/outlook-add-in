@@ -1,0 +1,89 @@
+@font-face {
+  font-family: 'rectrace';
+  src:
+    url('../fonts/rectrace.ttf?yho4yj') format('truetype'),
+    url('../fonts/rectrace.woff?yho4yj') format('woff'),
+    url('../fonts/rectrace.svg?yho4yj#rectrace') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="rt-icon-"], [class*=" rt-icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'rectrace' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.rt-icon-cp-checked:before {
+  content: "\e602";
+}
+.rt-icon-delete:before {
+  content: "\e900";
+}
+.rt-icon-edit-title:before {
+  content: "\e901";
+}
+.rt-icon-email:before {
+  content: "\e902";
+}
+.rt-icon-link:before {
+  content: "\e903";
+}
+.rt-icon-mic-off:before {
+  content: "\e904";
+}
+.rt-icon-mic-on:before {
+  content: "\e905";
+}
+.rt-icon-save:before {
+  content: "\e906";
+}
+.rt-icon-screen:before {
+  content: "\e907";
+}
+.rt-icon-share:before {
+  content: "\e908";
+}
+.rt-icon-tab:before {
+  content: "\e909";
+}
+.rt-icon-webcam:before {
+  content: "\e90a";
+}
+.rt-icon-webcam-off:before {
+  content: "\e90b";
+}
+.rt-icon-webcam-on:before {
+  content: "\e90a";
+}
+.rt-icon-pause:before {
+  content: "\e90c";
+}
+.rt-icon-play-button-arrowhead:before {
+  content: "\e90d";
+}
+.rt-icon-close:before {
+  content: "\e90e";
+}
+.rt-icon-Dot-More-Vertical-Menu_3844442:before {
+  content: "\e90f";
+}
+.rt-icon-warning:before {
+  content: "\ea07";
+}
+.rt-icon-settings:before {
+  content: "\ea08";
+}
+.rt-icon-stop:before {
+  content: "\ea1e";
+}
