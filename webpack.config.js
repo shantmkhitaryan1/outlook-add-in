@@ -21,6 +21,7 @@ module.exports = async (env, options) => {
       polyfill: ["core-js/stable", "regenerator-runtime/runtime"],
       taskpane: "./src/taskpane/taskpane.js",
       commands: "./src/commands/commands.js",
+      dialog: "./src/settings/dialog.js",
     },
     output: {
       devtoolModuleFilenameTemplate: "webpack:///[resource-path]?[loaders]",
@@ -63,27 +64,39 @@ module.exports = async (env, options) => {
       }),
       new CopyWebpackPlugin({
         patterns: [
-          {
-            from: "assets/*",
-            to: "assets/[name][ext][query]",
+        {
+          from: "./src/taskpane/taskpane.css",
+          to: "taskpane.css",
+        },
+        {
+          from: "./src/settings/dialog.css",
+          to: "dialog.css",
+        },
+        {
+          from: "assets/*",
+          to: "assets/[name][ext][query]",
+        },
+        {
+          from: "manifest*.xml",
+          to: "[name]." + buildType + "[ext]",
+          transform(content) {
+            if (dev) {
+              return content;
+            } else {
+              return content.toString().replace(new RegExp(urlDev, "g"), urlProd);
+            }
           },
-          {
-            from: "manifest*.xml",
-            to: "[name]." + buildType + "[ext]",
-            transform(content) {
-              if (dev) {
-                return content;
-              } else {
-                return content.toString().replace(new RegExp(urlDev, "g"), urlProd);
-              }
-            },
-          },
-        ],
-      }),
+        },
+      ]}),
       new HtmlWebpackPlugin({
         filename: "commands.html",
         template: "./src/commands/commands.html",
         chunks: ["polyfill", "commands"],
+      }),
+      new HtmlWebpackPlugin({
+        filename: "dialog.html",
+        template: "./src/settings/dialog.html",
+        chunks: ["polyfill", "dialog"],
       }),
     ],
     devServer: {

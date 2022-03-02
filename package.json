@@ -27,7 +27,10 @@
   },
   "dependencies": {
     "core-js": "^3.9.1",
-    "regenerator-runtime": "^0.13.7"
+    "jquery": "^3.6.0",
+    "regenerator-runtime": "^0.13.7",
+    "showdown": "^2.0.1",
+    "urijs": "^1.19.8"
   },
   "devDependencies": {
     "@babel/core": "^7.13.10",
